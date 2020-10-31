@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+	<script>
+		function AssignValue(input)
+		{
+			document.getElementById('result').value+=input;
+		}
+		function Calculate()
+		{
+			var v_result= document.getElementById('result').value;
+			document.getElementById('result').value=eval(v_result);	
+		}
+		function Reset()
+		{
+		document.getElementById('result').value="";
+		}	
+	</script>
+
+	<style type="text/css">
+		body,html{
+			matgin:1px;
+			background-color: grey;
+            color:white;
+		}
+		input[type="button"]{
+			border:3;
+			width:100%;
+		    background-color: white;
+			outline:3;
+		}
+		#calc
+		{
+			margin:5%;
+		}
+	</style>
+</head>
+<body>
+<h1>This is a simple calculator program.</h1>
+	<div id='calc'>
+	<table border="50">
+		<tr>
+			<td colspan="3"><input type="text" id="result"></td>
+			<td><input type="button" value="C"  onClick="Reset()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onClick="AssignValue('1')"></td>
+			<td><input type="button" value="2" onClick="AssignValue('2')"></td>
+			<td><input type="button" value="3" onClick="AssignValue('3')"></td>
+			<td><input type="button" value="+" onClick="AssignValue('+')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onClick="AssignValue('4')"></td>
+			<td><input type="button" value="5" onClick="AssignValue('5')"></td>
+			<td><input type="button" value="6" onClick="AssignValue('6')"></td>
+			<td><input type="button" value="-" onClick="AssignValue('-')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onClick="AssignValue('7')"></td>
+			<td><input type="button" value="8" onClick="AssignValue('8')"></td>
+			<td><input type="button" value="9" onClick="AssignValue('9')"></td>
+			<td><input type="button" value="/" onClick="AssignValue('/')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="*" onClick="AssignValue('*')"></td>
+			<td><input type="button" value="0" onClick="AssignValue('0')"></td>
+			<td><input type="button" value="." onClick="AssignValue('.')"></td>
+			<td><input type="button" id="cal" value="=" onClick="Calculate()"></td>
+		</tr>
+	</table>
+	</div>
+</body>
+</html>
